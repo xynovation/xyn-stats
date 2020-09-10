@@ -1,0 +1,17 @@
+{
+  "name": "xyn-stats",
+  "version": "1.0.0",
+  "description": "An easy-to-use modern JavaScript statistical package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "statistics",
+    "stats",
+    "data analysis",
+    "data science",
+  ],
+  "author": "Kevin Janise",
+  "license": "MIT"
+}
