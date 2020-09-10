@@ -1,2 +1,2 @@
 # xyn-stats
-A modern JavaScript easy-to-use statistical library.
+An easy-to-use modern JavaScript statistical package.
