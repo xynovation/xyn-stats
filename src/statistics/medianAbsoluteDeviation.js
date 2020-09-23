@@ -1,3 +1,5 @@
+//@ts-check 
+
 /**
  * Copyright (c) Xynovation, Inc. and its affiliates.
  *
@@ -20,10 +22,13 @@ import median from './median';
  *
  * @param {Array<number>} x
  *            values to calculate the median absolute deviation of
+ * @param {number} [scalingFactor = 1.4826]
+ *            adjusts MAD to match a distribution, the default is
+ *            1.4826 which adjusts to the normal distribution
  * @returns{number} the median absolute deviation of the values
  * @example medianAbsoluteDeviation([1, 1, 2, 2, 4, 6, 9])  // is 1
  */
-function medianAbsoluteDeviation(x) {
+function medianAbsoluteDeviation(x, scalingFactor = 1.4826) {
   if (isEmpty(x)) {
     throw new Error(`x must have at least 1 observation, was [${x}]`);
   }
@@ -37,7 +42,7 @@ function medianAbsoluteDeviation(x) {
     absoluteDeviations.push(Math.abs(x[i] - theMedian));
   }
 
-  return median(absoluteDeviations);
+  return median(absoluteDeviations) * scalingFactor;
 }
 
 export default medianAbsoluteDeviation;
