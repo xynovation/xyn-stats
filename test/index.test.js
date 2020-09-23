@@ -3,6 +3,7 @@ import * as XynDataScience from '../src/index';
 describe('exports', () => {
   it('has the function', () => {
     expect(XynDataScience.goldenSectionLineSearch).toBeDefined();
+    expect(XynDataScience.interquartileRange).toBeDefined();
     expect(XynDataScience.maximum).toBeDefined();
     expect(XynDataScience.mean).toBeDefined();
     expect(XynDataScience.median).toBeDefined();

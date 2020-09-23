@@ -6,6 +6,7 @@
  */
 
 // Statistics
+export { default as interquartileRange } from './statistics/interquartileRange';
 export { default as maximum } from './statistics/maximum';
 export { default as mean } from './statistics/mean';
 export { default as median } from './statistics/median';
