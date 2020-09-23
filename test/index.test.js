@@ -1,22 +1,22 @@
-import * as XynDataScience from '../src/index';
+import * as XynStats from '../src/index';
 
 describe('exports', () => {
   it('has the function', () => {
-    expect(XynDataScience.goldenSectionLineSearch).toBeDefined();
-    expect(XynDataScience.interquartileRange).toBeDefined();
-    expect(XynDataScience.maximum).toBeDefined();
-    expect(XynDataScience.mean).toBeDefined();
-    expect(XynDataScience.median).toBeDefined();
-    expect(XynDataScience.medianAbsoluteDeviation).toBeDefined();
-    expect(XynDataScience.minimum).toBeDefined();
-    expect(XynDataScience.neumaierSum).toBeDefined();
-    expect(XynDataScience.percentile).toBeDefined();
-    expect(XynDataScience.range).toBeDefined();
-    expect(XynDataScience.standardDeviation).toBeDefined();
-    expect(XynDataScience.sum).toBeDefined();
-    expect(XynDataScience.trimmedMean).toBeDefined();
-    expect(XynDataScience.lerp).toBeDefined();
-    expect(XynDataScience.lerpPoint).toBeDefined();
-    expect(XynDataScience.zScore).toBeDefined();
+    expect(XynStats.goldenSectionLineSearch).toBeDefined();
+    expect(XynStats.interquartileRange).toBeDefined();
+    expect(XynStats.lerp).toBeDefined();
+    expect(XynStats.lerpPoint).toBeDefined();
+    expect(XynStats.maximum).toBeDefined();
+    expect(XynStats.mean).toBeDefined();
+    expect(XynStats.median).toBeDefined();
+    expect(XynStats.medianAbsoluteDeviation).toBeDefined();
+    expect(XynStats.minimum).toBeDefined();
+    expect(XynStats.neumaierSum).toBeDefined();
+    expect(XynStats.percentile).toBeDefined();
+    expect(XynStats.range).toBeDefined();
+    expect(XynStats.standardDeviation).toBeDefined();
+    expect(XynStats.sum).toBeDefined();
+    expect(XynStats.trimmedMean).toBeDefined();
+    expect(XynStats.zScore).toBeDefined();
   });
 });

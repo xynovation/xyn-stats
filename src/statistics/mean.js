@@ -14,7 +14,7 @@ import sum from './sum';
  * @param {Array<number>} x one or more observations
  * @returns {number} mean
  * @throws {Error} if the the length of x is less than one
- * @example mean([1, 2, 3]); // is 2
+ * @example mean([1, 2, 5, 0]); // is 2
  */
 function mean(x) {
   if (isEmpty(x)) {

@@ -22,22 +22,18 @@ function variance(x) {
     throw new Error(`x must have at least 1 observation, was [${x}]`);
   }
 
-  var delta = 0.0;
-  var i = 0;
-  var sampleVariance = 0.0;
-  var sumSquaredDifferences = 0.0;
-  var theMean = 0.0;
+  let delta = 0.0;
+  let sumSquaredDifferences = 0.0;
+  let theMean = 0.0;
 
   theMean = mean(x);
 
-  for (i = 0; i < x.length; i += 1) {
+  for (let i = 0; i < x.length; i += 1) {
     delta = x[i] - theMean;
     sumSquaredDifferences = sumSquaredDifferences + delta * delta;
   }
 
-  sampleVariance = sumSquaredDifferences / (x.length - 1.0);
-
-  return sampleVariance;
+  return sumSquaredDifferences / (x.length - 1.0);
 }
 
 export default variance;

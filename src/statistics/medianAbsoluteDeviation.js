@@ -1,5 +1,3 @@
-//@ts-check 
-
 /**
  * Copyright (c) Xynovation, Inc. and its affiliates.
  *

@@ -19,10 +19,6 @@
  * @example lerp(1, 2, .5); // is 1.5
  */
 function lerp(startValue, endValue, pct) {
-  // https://en.wikipedia.org/wiki/Linear_interpolation
-  //   return (1.0 - pct) * startValue + pct * endValue;
-
-  // Code from http://tulrich.com/geekstuff/lerp.html
   if (pct < 0.5) {
     return startValue + (endValue - startValue) * pct;
   } else {

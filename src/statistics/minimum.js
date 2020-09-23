@@ -21,12 +21,9 @@ function minimum(x) {
     throw new Error(`x must have at least 1 observation, was [${x}]`);
   }
 
-  var theMinimum = 0.0;
-  var i = 0;
+  let theMinimum = x[0];
 
-  theMinimum = x[0];
-
-  for (i = 1; i < x.length; i = i + 1) {
+  for (let i = 1; i < x.length; i = i + 1) {
     if (x[i] < theMinimum) {
       theMinimum = x[i];
     }

@@ -3,6 +3,15 @@ import median from '../../src/statistics/median';
 const TOLERANCE = 0.00000001;
 
 describe('median', () => {
+  it('should nor rearrange array values', () => {
+    let values = [3, 1, 2];
+    median(values);
+
+    expect(values[0]).toBe(3);
+    expect(values[1]).toBe(1);
+    expect(values[2]).toBe(2);
+  });
+
   it('should return exact value for 1 obs', () => {
     const values = [1];
     expect(median(values)).toBeCloseTo(1, TOLERANCE);

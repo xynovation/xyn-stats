@@ -6,7 +6,6 @@
  */
 
 import isEmpty from '../utils/isEmpty';
-import median from './median';
 import sum from './sum';
 
 /**
@@ -22,7 +21,7 @@ import sum from './sum';
  * The number of excluded data points from each end is rounded down to the
  * nearest integer after multiplying the numbver of values by the percentage.
  *
- * If the trimPercent is 50% then the median is returned.
+ * If the trimPercent is >= 50% then the median is returned.
  *
  * For example, if percent = .25 and there are 10 values in the
  * list then 2 (.25 * 10 = 2.5 rounded down to 2) values are removed from the
@@ -32,7 +31,7 @@ import sum from './sum';
  *
  * @param {Array<number>} x
  *            values to calculate the trimmed mean of
- * @param{number} trimPercent
+ * @param {number} trimPercent
  *            the percentage of data points to exclude from the left and right sides
  *            of the sorted array, rounds down to nearest integer
  * @returns {number} the mean value of the trimmed values
@@ -44,17 +43,17 @@ function trimmedMean(x, trimPercent) {
     throw new Error(`x must have at least 1 observation, was [${x}]`);
   }
 
-  var observationCount = 0;
-  var sortedObs = null;
-  var total = 0;
+  if (trimPercent < 0 || trimPercent >= 0.5) {
+    throw new Error(`trimPercent must be >=0 and < .5, was ${trimPercent}`);
+  }
+
+  let observationCount = 0;
+  let sortedObs = null;
+  let total = 0;
   let beginIndex = 0;
   let endIndex = 0;
 
-  if (trimPercent >= 0.5) {
-    return median(x);
-  }
-
-  sortedObs = x.slice();
+  sortedObs = [...x]; // copy the array so original values aren't rearranged
   sortedObs.sort((a, b) => a - b);
 
   beginIndex = Math.trunc(x.length * trimPercent);
