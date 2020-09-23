@@ -15,6 +15,7 @@ import minimum from './minimum';
  * @param {Array<number>} x
  *            values to find the range for
  * @returns {number} the range
+ * @throws {Error} if the the length of x is less than one
  */
 function range(x) {
   if (isEmpty(x)) {

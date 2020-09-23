@@ -14,15 +14,15 @@ import neumaierSum from './neumaierSum';
  * you want to use.
  *
  * @param {Array<number>} x observations to sum
- * @throws {Error} if the the length of x is less than one
  * @returns {number} total value
+ * @throws {Error} if the the length of x is less than one
  */
-function sum(x) {
+function sum(x, beginIndex, endIndex) {
   if (isEmpty(x)) {
     throw new Error(`x must have at least 1 observation, was [${x}]`);
   }
 
-  return neumaierSum(x);
+  return neumaierSum(x, beginIndex, endIndex);
 }
 
 export default sum;

@@ -10,6 +10,7 @@ import variance from './variance';
 
 /**
  * Calculates the standard deviation of a sample of the population.
+ * This is always a positive number.
  *
  * @param {Array<number>} x input array of population sample
  * @returns {number} the sample standard deviation

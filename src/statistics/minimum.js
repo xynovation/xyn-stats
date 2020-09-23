@@ -13,6 +13,7 @@ import isEmpty from '../utils/isEmpty';
  * @param {Array<number>} x
  *            values to search for the maximum in
  * @returns {number} the minimum value
+ * @throws {Error} if the the length of x is less than one
  * @example minimum([1, 2, 3]); // is 1
  */
 function minimum(x) {

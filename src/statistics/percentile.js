@@ -24,6 +24,8 @@ import isEmpty from '../utils/isEmpty';
  *            percentile
  * @return {Number} the percentile value, the value which is greater than thePercentile %
  *                  of the values in the list
+ * @throws {Error} if the the length of x is less than one or
+ *                 percentile < 0 or percentile > 1
  */
 function percentile(x, thePercentile) {
   var percentileScore = 0.0;

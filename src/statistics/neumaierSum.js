@@ -14,8 +14,9 @@ import isEmpty from '../utils/isEmpty';
  *
  * @param {Array<number>} input input array
  * @returns {number} total value
+ * @throws {Error} if the the length of x is less than one
  */
-function neumaierSum(x) {
+function neumaierSum(x, beginIndex = 0, endIndex) {
   if (isEmpty(x)) {
     throw new Error(`x must have at least 1 observation, was [${x}]`);
   }
@@ -25,9 +26,13 @@ function neumaierSum(x) {
   let t = 0;
   let i = 0;
 
-  theSum = x[0];
+  if (endIndex === undefined) {
+    endIndex = x.length;
+  }
 
-  for (i = 1; i < x.length; i += 1) {
+  theSum = x[beginIndex];
+
+  for (i = beginIndex + 1; i < endIndex; i += 1) {
     t = theSum + x[i];
     if (Math.abs(theSum) >= Math.abs(x[i])) {
       c += theSum - t + x[i];

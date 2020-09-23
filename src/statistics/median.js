@@ -14,6 +14,7 @@ import percentile from './percentile';
  * @param {Array<number>}
  *            x - The observations to calculate the median of
  * @return {number} The mean or average
+ * @throws {Error} if the the length of x is less than one
  * @example median([1, 2, 3, 4]); // is 2.5
  */
 function median(x) {
