@@ -12,6 +12,7 @@ describe('exports', () => {
     expect(XynStats.medianAbsoluteDeviation).toBeDefined();
     expect(XynStats.minimum).toBeDefined();
     expect(XynStats.neumaierSum).toBeDefined();
+    expect(XynStats.outlierExtremasIterativeMAD).toBeDefined();
     expect(XynStats.percentile).toBeDefined();
     expect(XynStats.range).toBeDefined();
     expect(XynStats.standardDeviation).toBeDefined();
