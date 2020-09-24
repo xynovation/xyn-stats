@@ -31,16 +31,14 @@ function medianAbsoluteDeviation(x, scalingFactor = 1.4826) {
     throw new Error(`x must have at least 1 observation, was [${x}]`);
   }
 
-  let absoluteDeviations = [];
-  let theMedian = 0.0;
-
-  theMedian = median(x);
+  let absoluteDeviation = [];
+  let theMedian = median(x);
 
   for (let i = 0; i < x.length; i += 1) {
-    absoluteDeviations.push(Math.abs(x[i] - theMedian));
+    absoluteDeviation.push(Math.abs(x[i] - theMedian));
   }
 
-  return median(absoluteDeviations) * scalingFactor;
+  return median(absoluteDeviation) * scalingFactor;
 }
 
 export default medianAbsoluteDeviation;
