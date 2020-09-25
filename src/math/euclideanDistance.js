@@ -8,8 +8,8 @@
 /**
  * Calculates the Euclidean or stright line distance between two points.
  *
- * @param {number} pointA the first point
- * @param {number} pointB the second point
+ * @param {Array<number>} pointA the first point
+ * @param {Array<number>} pointB the second point
  * @return {number} distance between points
  * @example euclideanDistance([1, 1], [2, 2]); // is 1.414
  */
@@ -31,8 +31,6 @@ function euclideanDistance(pointA, pointB) {
   for (let i = 0; i < pointA.length; i += 1) {
     sum = sum + (pointA[i] - pointB[i]) * (pointA[i] - pointB[i]);
   }
-
-  sum = (accumulator, currentValue) => accumulator + currentValue;
 
   return Math.sqrt(sum);
 }
