@@ -18,6 +18,7 @@ export { default as outlierExtremasIterativeMAD } from './statistics/outlierExtr
 export { default as pearsonCorrelation } from './statistics/percentile';
 export { default as percentile } from './statistics/percentile';
 export { default as range } from './statistics/range';
+export { default as shuffle } from './statistics/shuffle';
 export { default as standardDeviation } from './statistics/standardDeviation';
 export { default as sum } from './statistics/sum';
 export { default as trimmedMean } from './statistics/trimmedMean';

@@ -17,6 +17,7 @@ describe('exports', () => {
     expect(XynStats.pearsonCorrelation).toBeDefined();
     expect(XynStats.percentile).toBeDefined();
     expect(XynStats.range).toBeDefined();
+    expect(XynStats.shuffle).toBeDefined();
     expect(XynStats.standardDeviation).toBeDefined();
     expect(XynStats.sum).toBeDefined();
     expect(XynStats.trimmedMean).toBeDefined();
