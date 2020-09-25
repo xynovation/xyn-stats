@@ -1,6 +1,13 @@
 import cosineSimilarity from '../../src/statistics/cosineSimilarity';
 
 describe('cosineSimilarity', () => {
+  it('works for a single value', () => {
+    const x = [1];
+    const y = [2];
+    const v = cosineSimilarity(x, y);
+    expect(v).toBe(1);
+  });
+
   it('works for same direction', () => {
     const x = [1, 2, 3];
     const y = [2, 4, 6];
