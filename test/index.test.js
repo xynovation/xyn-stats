@@ -2,6 +2,7 @@ import * as XynStats from '../src/index';
 
 describe('exports', () => {
   it('has the function', () => {
+    expect(XynStats.cosineSimilarity).toBeDefined();
     expect(XynStats.goldenSectionLineSearch).toBeDefined();
     expect(XynStats.interquartileRange).toBeDefined();
     expect(XynStats.lerp).toBeDefined();

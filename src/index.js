@@ -6,6 +6,7 @@
  */
 
 // Statistics
+export { default as cosineSimilarity } from './statistics/cosineSimilarity';
 export { default as interquartileRange } from './statistics/interquartileRange';
 export { default as maximum } from './statistics/maximum';
 export { default as mean } from './statistics/mean';
