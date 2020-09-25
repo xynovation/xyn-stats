@@ -15,6 +15,7 @@ export { default as medianAbsoluteDeviation } from './statistics/medianAbsoluteD
 export { default as minimum } from './statistics/minimum';
 export { default as neumaierSum } from './statistics/neumaierSum';
 export { default as outlierExtremasIterativeMAD } from './statistics/outlierExtremasIterativeMAD';
+export { default as pearsonCorrelation } from './statistics/percentile';
 export { default as percentile } from './statistics/percentile';
 export { default as range } from './statistics/range';
 export { default as standardDeviation } from './statistics/standardDeviation';
