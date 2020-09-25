@@ -16,7 +16,7 @@ import isEmpty from '../utils/isEmpty';
  * @returns {number} similarity measure between -1 and 1
  *                   -1 means vectors are in opposite directions
  *                   1 means vectors are in same direction
- * @throws {Error} if the the length of x is less than one
+ * @throws {Error} if x or y do not have values or are not the same length
  * @example cosineSimilarity([1, 2, 3], [2, 4, 6]); // is 1
  */
 function cosineSimilarity(x, y) {
