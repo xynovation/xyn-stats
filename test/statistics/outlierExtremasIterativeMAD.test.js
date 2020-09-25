@@ -15,8 +15,8 @@ describe('outlierExtremas', () => {
     var values = [1, 2, 3, 3, 4, 4, 4, 5, 5.5, 6, 6, 6.5, 7, 7, 7.5, 8, 9, 12, 52, 90];
     let { min, max } = outlierExtremasIterativeMAD(values);
 
-    expect(min).toBeCloseTo(-1.4129999999999994, TOLERANCE);
-    expect(max).toBeCloseTo(13.413, TOLERANCE);
+    expect(min).toBeCloseTo(-0.736375, TOLERANCE);
+    expect(max).toBeCloseTo(12.236375, TOLERANCE);
   });
 
   it('works for scaling factor of 3', () => {

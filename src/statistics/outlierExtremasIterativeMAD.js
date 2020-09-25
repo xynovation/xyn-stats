@@ -26,15 +26,16 @@ import medianAbsoluteDeviation from './medianAbsoluteDeviation';
  *
  * @param {Array<number>}
  *            x - The observations to calculate the outlier range from
- * @param {number} [maxIterations = 1] max number of times to remove
+ * @param {number} [maxIterations = 3] max number of times to remove
  *                                     outliers and determine new outlier range
- * @param {number} [deviation = 2.5]
+ * @param {number} [maxDeviation = 2.5] outlier is any value more than this many
+ *                                      deviations from the median
  * @return {number, number} min and max outlier values. Any values < min or > max
  *                          are considered outliers
  * @throws {Error} if the the length of x is less than one
  * @example let { min, max } = outlierExtremas([1, 2, 3, 9], 3);  // is -1.7, 5.7
  */
-function outlierExtremasIterativeMAD(x, maxIterations = 1, deviation = 2.5) {
+function outlierExtremasIterativeMAD(x, maxIterations = 3, maxDeviation = 2.5) {
   if (isEmpty(x)) {
     throw new Error(`x must have at least 1 observation, was [${x}]`);
   }
@@ -45,10 +46,10 @@ function outlierExtremasIterativeMAD(x, maxIterations = 1, deviation = 2.5) {
 
   let iterationCount = 0;
   let mad = 0;
-  let minOutlier = Number.MIN_VALUE;
-  let maxOutlier = Number.MAX_VALUE;
-  let prevMinOutlier = Number.MIN_VALUE;
-  let prevMaxOutlier = Number.MAX_VALUE;
+  let minOutlier = Number.MIN_SAFE_INTEGER;
+  let maxOutlier = Number.MAX_SAFE_INTEGER;
+  let prevMinOutlier = Number.MIN_SAFE_INTEGER;
+  let prevMaxOutlier = Number.MAX_SAFE_INTEGER;
   let shouldContinue = true;
   let theMedian = 0;
   let values = x;
@@ -62,8 +63,8 @@ function outlierExtremasIterativeMAD(x, maxIterations = 1, deviation = 2.5) {
     mad = medianAbsoluteDeviation(values);
     theMedian = median(values);
 
-    minOutlier = theMedian - deviation * mad;
-    maxOutlier = theMedian + deviation * mad;
+    minOutlier = theMedian - maxDeviation * mad;
+    maxOutlier = theMedian + maxDeviation * mad;
 
     if ((minOutlier === prevMinOutlier && maxOutlier === prevMaxOutlier) || iterationCount >= maxIterations) {
       shouldContinue = false;
