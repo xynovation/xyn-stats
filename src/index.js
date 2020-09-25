@@ -31,3 +31,4 @@ export { default as goldenSectionLineSearch } from './optimization/goldenSection
 // Math
 export { default as lerp } from './math/lerp';
 export { default as lerpPoint } from './math/lerpPoint';
+export { default as euclideanDistance } from './math/euclideanDistance';
