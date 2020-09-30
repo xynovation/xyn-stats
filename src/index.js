@@ -29,6 +29,9 @@ export { default as zScore } from './statistics/zScore';
 export { default as goldenSectionLineSearch } from './optimization/goldenSectionLineSearch';
 
 // Math
+export { default as biggerThan } from './math/biggerThan';
 export { default as lerp } from './math/lerp';
 export { default as lerpPoint } from './math/lerpPoint';
 export { default as euclideanDistance } from './math/euclideanDistance';
+export { default as smallerThan } from './math/smallerThan';
+export { default as truncToFixed } from './math/truncToFixed';
