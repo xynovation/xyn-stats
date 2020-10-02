@@ -65,6 +65,10 @@ function frequencyDistribution(x, binCount) {
   for (let i = 0; i < x.length; i += 1) {
     binIndex = Math.trunc((x[i] - min) / binWidth);
 
+    if (isNaN(binIndex)) {
+      binIndex = 0;
+    }
+
     if (binIndex >= binCount) {
       binIndex = binCount - 1;
     }

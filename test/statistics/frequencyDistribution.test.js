@@ -5,6 +5,52 @@ import minimum from '../../src/statistics/minimum';
 const TOLERANCE = 0.00000001;
 
 describe('frequencyDistribution', () => {
+  it('works for 1 observation', () => {
+    const values = [1];
+    const bins = frequencyDistribution(values, 10);
+    expect(bins).toHaveLength(10);
+    expect(bins[0].count).toEqual(1);
+    expect(bins[1].count).toEqual(0);
+    expect(bins[2].count).toEqual(0);
+    expect(bins[3].count).toEqual(0);
+    expect(bins[4].count).toEqual(0);
+    expect(bins[5].count).toEqual(0);
+    expect(bins[6].count).toEqual(0);
+    expect(bins[7].count).toEqual(0);
+    expect(bins[8].count).toEqual(0);
+    expect(bins[9].count).toEqual(0);
+
+    let total = 0;
+    let pctTotal = 0;
+    for (let i = 0; i < bins.length; i += 1) {
+      total = total + bins[i].count;
+      pctTotal = pctTotal + bins[i].percentage;
+    }
+
+    expect(total).toEqual(values.length);
+    expect(pctTotal).toBeCloseTo(1.0, TOLERANCE);
+  });
+
+  it('works for all the same values', () => {
+    const values = [2, 2, 2, 2, 2];
+    const bins = frequencyDistribution(values, 3);
+    expect(bins).toHaveLength(3);
+    expect(bins[0].count).toEqual(5);
+    expect(bins[0].percentage).toEqual(1);
+    expect(bins[1].count).toEqual(0);
+    expect(bins[2].count).toEqual(0);
+
+    let total = 0;
+    let pctTotal = 0;
+    for (let i = 0; i < bins.length; i += 1) {
+      total = total + bins[i].count;
+      pctTotal = pctTotal + bins[i].percentage;
+    }
+
+    expect(total).toEqual(values.length);
+    expect(pctTotal).toBeCloseTo(1.0, TOLERANCE);
+  });
+
   it('works for binCount of 1', () => {
     const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const bins = frequencyDistribution(values, 1);
