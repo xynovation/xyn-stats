@@ -8,6 +8,7 @@
 // Statistics
 export { default as cosineSimilarity } from './statistics/cosineSimilarity';
 export { default as interquartileRange } from './statistics/interquartileRange';
+export { default as linearRegression } from './statistics/linearRegression';
 export { default as maximum } from './statistics/maximum';
 export { default as mean } from './statistics/mean';
 export { default as median } from './statistics/median';
@@ -30,8 +31,12 @@ export { default as goldenSectionLineSearch } from './optimization/goldenSection
 
 // Math
 export { default as biggerThan } from './math/biggerThan';
+export { default as euclideanDistance } from './math/euclideanDistance';
 export { default as lerp } from './math/lerp';
 export { default as lerpPoint } from './math/lerpPoint';
-export { default as euclideanDistance } from './math/euclideanDistance';
+export { default as roundTo } from './math/roundTo';
 export { default as smallerThan } from './math/smallerThan';
 export { default as truncToFixed } from './math/truncToFixed';
+
+// Utils
+export { default as isEmpty } from './utils/isEmpty';

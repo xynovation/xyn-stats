@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import roundTo from '../math/roundTo';
 import isEmpty from '../utils/isEmpty';
 
 /**
@@ -61,7 +62,7 @@ function pearsonCorrelation(x, y) {
 
   correlationCoefficient = numerator / denominator;
 
-  return correlationCoefficient;
+  return roundTo(correlationCoefficient);
 }
 
 export default pearsonCorrelation;

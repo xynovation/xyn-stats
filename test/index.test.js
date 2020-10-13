@@ -7,8 +7,10 @@ describe('exports', () => {
     expect(XynStats.euclideanDistance).toBeDefined();
     expect(XynStats.goldenSectionLineSearch).toBeDefined();
     expect(XynStats.interquartileRange).toBeDefined();
+    expect(XynStats.isEmpty).toBeDefined();
     expect(XynStats.lerp).toBeDefined();
     expect(XynStats.lerpPoint).toBeDefined();
+    expect(XynStats.linearRegression).toBeDefined();
     expect(XynStats.maximum).toBeDefined();
     expect(XynStats.mean).toBeDefined();
     expect(XynStats.median).toBeDefined();
@@ -19,6 +21,7 @@ describe('exports', () => {
     expect(XynStats.pearsonCorrelation).toBeDefined();
     expect(XynStats.percentile).toBeDefined();
     expect(XynStats.range).toBeDefined();
+    expect(XynStats.roundTo).toBeDefined();
     expect(XynStats.shuffle).toBeDefined();
     expect(XynStats.smallerThan).toBeDefined();
     expect(XynStats.standardDeviation).toBeDefined();
