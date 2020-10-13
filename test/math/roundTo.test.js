@@ -11,6 +11,24 @@ describe('isEmpty', () => {
     expect(roundTo(8.655, 2)).toBe(8.66);
   });
 
+  it('throws error for invalid decimalPlaces', () => {
+    expect(() => {
+      roundTo(1.23, -1);
+    }).toThrow('decimalPlaces must be >= 0 and < 100, was -1');
+
+    expect(() => {
+      roundTo(1.23, 100);
+    }).toThrow('decimalPlaces must be >= 0 and < 100, was 100');
+  });
+
+  it('can round to 0 places', () => {
+    let value = 1.23456;
+
+    let roundedValue = roundTo(value, 0);
+
+    expect(roundedValue).toBe(1);
+  });
+
   it('is true for 1.5000000000000089', () => {
     let value = 1.5000000000000089;
 

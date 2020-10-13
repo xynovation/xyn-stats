@@ -150,7 +150,7 @@ describe('linearRegression', () => {
 
       // generate random points on the line
       let func = linearFunction(coeff);
-      let obsCount = coeffCount + 10;
+      let obsCount = coeffCount + 2;
       for (let i = 0; i < obsCount; i += 1) {
         obs[i] = [];
         for (let j = 0; j < coeff.length - 1; j += 1) {

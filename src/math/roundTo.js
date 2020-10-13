@@ -21,6 +21,10 @@
  */
 
 function roundTo(value, decimalPlaces = 12) {
+  if (decimalPlaces < 0 || decimalPlaces >= 100) {
+    throw Error(`decimalPlaces must be >= 0 and < 100, was ${decimalPlaces}`);
+  }
+
   return parseFloat(parseFloat(value.toFixed(decimalPlaces + 1) + '1').toFixed(decimalPlaces));
 }
 
